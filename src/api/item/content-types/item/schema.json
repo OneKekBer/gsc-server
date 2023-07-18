@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Discount": {
+      "type": "decimal"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "skin",
+        "hair",
+        "body",
+        "face"
+      ]
+    },
+    "SmallDiscription": {
+      "type": "richtext"
+    },
+    "LargeDiscription": {
+      "type": "richtext"
+    },
+    "Ingridients": {
+      "type": "richtext"
+    },
+    "Photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Volume": {
+      "type": "decimal"
+    },
+    "isBestseller": {
+      "type": "boolean"
+    },
+    "Reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "Item"
+    },
+    "Color": {
+      "type": "string"
+    }
+  }
+}
